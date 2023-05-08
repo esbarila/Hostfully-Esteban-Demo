@@ -35,3 +35,4 @@ Feature: Adding a New computer
     Given the user is at /computers/new
     And User clicks Cancel
     Then User is redirected back to /computers
+    
