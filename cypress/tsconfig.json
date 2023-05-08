@@ -1,4 +1,3 @@
-
 {
     "include": ["./**/*.ts", "../cypress.d.ts"],
     "exclude": [],
