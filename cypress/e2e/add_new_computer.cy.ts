@@ -17,12 +17,12 @@ describe("Adding a new computer", () => {
     })
 
     it("Checks the computer was effectively created" , () => {
+        // This test is meant to fail currently Computer-database has a bug.
         cy.task('getUserData').then((userData) => {
             cy.get('[id=searchbox]').type(userData as string);    
         })
         cy.get('[id=searchsubmit]').click();
         cy.get('[id=main]').should('not.contain.text', 'Nothing to display');
-        // test should fail due to computer-database bug here.
     })
 
     it("Checks form validation while adding a computer", () => {
@@ -39,6 +39,14 @@ describe("Adding a new computer", () => {
         cy.get('input[id=name]').type(`Ultron ${Math.floor(Math.random() * 10000)}`);
         cy.get('[id=introduced]').type('1999-02-03');
         cy.get('[id=discontinued]').type('2003-06-12');
+        cy.get('select[name=company]').select('RCA');
+        cy.contains('Create this computer').click();
+        cy.contains(/Computer Ultron\s\d\d\d\d\shas been created/);
     })
 
+    it("User ceases thier intention to create a computer", () => {
+        cy.get('[id=add]').click();
+        cy.contains('Cancel').click()
+        cy.url().should('eq', 'https://computer-database.gatling.io/computers');
+    })
 });

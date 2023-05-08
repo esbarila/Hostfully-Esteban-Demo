@@ -4,6 +4,10 @@
 
 ## How to run tests
 
+### Prerequisite
+Have node and npm previously installed.
+
+
 1. Clone this repository
     `git clone https://github.com/esbarila/Hostfully-Esteban-Demo.git`
 2. Install cypress
