@@ -34,4 +34,11 @@ describe("Adding a new computer", () => {
         cy.contains('Failed to decode date');
     })
 
+    it("Makes use of every field in the add computer form", () => {
+        cy.get('[id=add]').click();
+        cy.get('input[id=name]').type(`Ultron ${Math.floor(Math.random() * 10000)}`);
+        cy.get('[id=introduced]').type('1999-02-03');
+        cy.get('[id=discontinued]').type('2003-06-12');
+    })
+
 });
