@@ -19,4 +19,4 @@ Have node and npm previously installed.
 5. Select your browser and Start E2E Testing
 6. Select the test you want to run.
 
-https://youtu.be/iTaVs-eWS80
+https://user-images.githubusercontent.com/47305731/236917501-dc0f7358-083e-4450-984b-a4d13593e5f6.mp4
